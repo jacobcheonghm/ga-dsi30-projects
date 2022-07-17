@@ -32,7 +32,9 @@ There are multiple ordinal features in the dataset that are recorded as strings,
 
 We first derived the correlation of all the numeric features with sale price and identified those with correlation more than or equals to 0.5. After which we plot a heatmap to identify any occurences of correlation among the predictive features.
 
-INSERT HEAT MAP PICTURE
+
+<img src="./images/p2_heatmap.png"
+     />
 
 We identified 6 numeric features ("1st Flr SF", "TotRms AbvGrd", "Garage Cars", "Bsmt Qual",c"Exter Qual", "Kitchen Qual") to be dropped as including them in the model will not add much additional information for the model.
 
@@ -40,7 +42,10 @@ We identified 6 numeric features ("1st Flr SF", "TotRms AbvGrd", "Garage Cars", 
 
 We will attempt to get an overview of the catergorical features by plotting the count plots and box plots to help narrow down features we want to keep in our regression model.
 
-Insert BOXPLOT COUNTPLOT COMPARISON
+
+<img src="./images/p2_boxcount.png"
+     />
+
 
 From the above comparisons, we observe that the five features above have very high occurence in only 1 or 2 categories within the feature. The boxplot also show limited variations among the catergories when plotted against the Sale price, therefore these may not add more predictive powers to our model and will be dropped from the model.
 
@@ -48,7 +53,9 @@ From the above comparisons, we observe that the five features above have very hi
 
 After narrowing down the categorical features to keep, we performed one-hot encoding for all the remaining categorical features. A quick check on the summary statistics shows that we do have at least 1 feature in the model that will help predict the sale price.
 
-INSERT OLS REGRESSION RESULT
+
+<img src="./images/p2_OLS_summary.JPG"
+     />
 
 Before modeling, we applied the same imputation for null values and dropped the same columns in test.csv dataset.
 
@@ -84,7 +91,8 @@ Thus having considered the above, we will select the **lasso model** as our mode
 |  9 |                Remod Age |       6417.992318 |     Neighborhood_StoneBr |       5698.449658 |
 | 10 |            Sale Type_New |       6337.496198 |           MS SubClass_20 |       5629.266237 |
 
-Insert Lasso Feature diagram
+<img src="./images/p2_feature_plot.png"
+     />
 
 **Intepretation of top 5 features in Lasso Model**
 
